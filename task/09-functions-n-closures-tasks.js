@@ -26,7 +26,8 @@
  *
  */
 function getComposition(f,g) {
-    throw new Error('Not implemented');
+    let compose = x => f(g(x));
+    return compose;
 }
 
 
@@ -47,7 +48,9 @@ function getComposition(f,g) {
  *
  */
 function getPowerFunction(exponent) {
-    throw new Error('Not implemented');
+    return function meme(x) {
+        return Math.pow(x, exponent);
+    }
 }
 
 
@@ -104,7 +107,9 @@ function memoize(func) {
  * retryer() => 2
  */
 function retry(func, attempts) {
-    throw new Error('Not implemented');
+    let success = false;
+    while (attempts-- > 0 && !(success = func())){}; 
+    console.log(success);
 }
 
 
